@@ -11,13 +11,10 @@ version = "1.0.0"
 
 repositories {
     mavenCentral()
-}
-
-gradlePlugin {
-    plugins {
-        create("resourcePlugin") {
-            id = "kz.bcc.plugin"
-            implementationClass = "kz.bcc.plugin.ResourcePlugin"
+    maven {
+        setUrl("https://repo.mycompany.com/repo")
+        metadataSources {
+            gradleMetadata()
         }
     }
 }
@@ -57,4 +54,3 @@ open class PrintTask: DefaultTask() {
         println("Hello my first working task")
     }
 }
-
